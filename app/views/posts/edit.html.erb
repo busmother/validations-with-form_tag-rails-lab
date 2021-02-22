@@ -25,7 +25,7 @@
 
     <div class="field<%= ' field_with_errors' if @post.errors[:content].any? %>">
     <%= label_tag "content", "Content" %>
-    <%= text_field_tag "content", @post.content%> 
+    <%= text_area_tag "content", @post.content%> 
   </div>
 
   <%= submit_tag "Update" %>
