@@ -13,38 +13,19 @@
   <%end%>
 
   <div class="field<%= ' field_with_errors' if @author.errors[:name].any? %>">
-    <%# <%= label_tag "name", "Name" %>
-    <%# <%= text_field_tag "name", @author.name%>
+    <%= label_tag "name", "Name" %>
+    <%= text_field_tag "name", @author.name%>
   </div>
 
   <div class="field<%= ' field_with_errors' if @author.errors[:email].any? %>">
-    <%# <%= label_tag "email", "E-mail" %>
-    <%# <%= text_field_tag "email", @author.email%> 
-  </div>
-
-    <div class="field<%= ' field_with_errors' if @author.errors[:phone_number].any? %>">
-    <%# <%= label_tag "phone_number", "Phone Number" %>
-    <%# <%= text_field_tag "phone_number", @author.phone_number%> 
-  </div>
-
-  <%# <%= submit_tag "Create" %>
-<%end%>
-
-<%= form_tag authors_path, method: "post" do %>
-  <div class="field">
-    <%= label_tag "name", "Name" %>
-    <%= text_field_tag "name", @author.name %>
-  </div>
-
-  <div class="field">
     <%= label_tag "email", "Email" %>
-    <%= text_field_tag "email", @author.email %>
+    <%= text_field_tag "email", @author.email  %>
   </div>
 
-  <div class="field">
+  <div class="field<%= ' field_with_errors' if @author.errors[:phone_number].any? %>">
     <%= label_tag "phone_number", "Phone Number" %>
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
 
-  <%= submit_tag "Create" %>
-<% end %>
+  <%= submit_tag "Create"%>
+<%end%>

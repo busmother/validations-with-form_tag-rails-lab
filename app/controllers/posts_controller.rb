@@ -13,9 +13,10 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @checkpost = Post.new(title: params[:title], category: params[:category], content: params[:content])
-    if @checkpost.valid?
-      @post.update(post_params)
+    @post.update(post_params)
+    # checkpost = Post.new(title: params[:title], category: params[:category], content: params[:content])
+    if @post.valid?
+      # @post.update(post_params)
       redirect_to post_path(@post)
     else
       render :edit
